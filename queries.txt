@@ -1,0 +1,5 @@
+1) db.consultas.find().count()
+2) db.consultas.find({"idade":{$gt:80}}).count()
+3) db.consultas.aggregate([{$group:{_id:"$sexo",occ:{$sum:1}}}])
+4) db.consultas.aggregate([{$unwind:"$operacoes"},{$group:{_id:"$operacoes.nome",occ:{$sum:1}}}])
+5) db.consultas.aggregate([{$group:{_id:{$substr:["$data",0,4]},occ:{$sum:1}}}])

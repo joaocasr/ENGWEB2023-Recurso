@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .w3-card-4
+    header.w3-container.w3-teal
+      h1 Consultas de estética
+      h2 Número de consultas atual: #{size}
+    .w3-container
+      table.w3-table-all
+        tr
+          th ID
+          th Data
+          th Nome
+          th Idade
+          th Sexo
+          th Número de intervencoes
+        each consulta in consultas
+          tr
+            td
+              a(href="/"+consulta._id) #{consulta._id}
+            td= consulta.data
+            td= consulta.nome
+            td= consulta.idade
+            td= consulta.sexo
+            td= consulta.nr_operacoes
